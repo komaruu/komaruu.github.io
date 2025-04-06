@@ -163,6 +163,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://komaruu.github.io/2025/04/06/utterance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="是但">
+      <meta itemprop="description" content="out of the light">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OutOFtheLIGHT">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/04/06/utterance/" class="post-title-link" itemprop="url">自用防呆手册 添加 utterances - hexo 评论</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-04-06 13:29:12 / Modified: 13:38:17" itemprop="dateCreated datePublished" datetime="2025-04-06T13:29:12+08:00">2025-04-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/next/" itemprop="url" rel="index"><span itemprop="name">next</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="快速添加评论"><a href="#快速添加评论" class="headerlink" title="快速添加评论"></a>快速添加评论</h2><p>因为hexo最新版本已经集成utterances评论，所以可以快速添加。</p>
+<h3 id="1-安装utterances-github-app-到你的库中"><a href="#1-安装utterances-github-app-到你的库中" class="headerlink" title="1.安装utterances github app 到你的库中"></a>1.安装utterances github app 到你的库中</h3><p><a target="_blank" rel="noopener" href="https://github.com/apps/utterances">utterances app</a> </p>
+<p>点击安装，选择一个仓库。</p>
+<h3 id="2-修改next主题的配置文件"><a href="#2-修改next主题的配置文件" class="headerlink" title="2.修改next主题的配置文件"></a>2.修改next主题的配置文件</h3><p>进入<code>_config.yml</code>找到以下字段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo: admin/adim.github.io # Github repository owner and name</span><br><span class="line">  # Available values: pathname | url | title | og:title</span><br><span class="line">  issue_term: pathname</span><br><span class="line">  # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light</span><br><span class="line">  theme: github-light #这个是评论主题的颜色</span><br></pre></td></tr></table></figure>
+<p>将<code>enable</code>属性改成<code>true</code></p>
+<p>找到<code>comments</code><br>修改<code>active</code> 属性为 <code>utterances</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">comments</span><br><span class="line">  active:utterances</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-finish"><a href="#3-finish" class="headerlink" title="3.finish"></a>3.finish</h3><p><a target="_blank" rel="noopener" href="https://utteranc.es/">utteranc.es</a></p>
+<p>在主页上可以找到不同主题颜色的预览。</p>
+<hr>
+<h2 id="手搓版本"><a href="#手搓版本" class="headerlink" title="手搓版本"></a>手搓版本</h2><p>注意一下，集成版本用的是utterances，我的手搓版本去掉了s，其实没什么区别，只是名字不一样。问就是懒得改了……</p>
+<h3 id="1-创建一个index文件"><a href="#1-创建一个index文件" class="headerlink" title="1. 创建一个index文件"></a>1. 创建一个index文件</h3><p><code>…\themes\next\layout\_third-party\comments\index.swig</code><br>有的人可能已经有index文件了，没有的话直接新建一个。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &#x27;utterance.swig&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-创建一个utterance文件"><a href="#2-创建一个utterance文件" class="headerlink" title="2. 创建一个utterance文件"></a>2. 创建一个utterance文件</h3><p><code>D:…\themes\next\layout\_third-party\comments\utterance.swig</code><br>新建。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.utterance.enable %&#125;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            // 匿名函数，防止污染全局变量</span><br><span class="line">            var e = document.createElement(&#x27;script&#x27;);</span><br><span class="line">            e.type = &#x27;text/javascript&#x27;;</span><br><span class="line">            e.async = true;</span><br><span class="line">            e.setAttribute(&#x27;issue-term&#x27;,&#x27;&#123;&#123; theme.utterance.issue_term &#125;&#125;&#x27;)</span><br><span class="line">            e.setAttribute(&#x27;theme&#x27;,&#x27;&#123;&#123; theme.utterance.theme &#125;&#125;&#x27;)</span><br><span class="line">            e.setAttribute(&#x27;repo&#x27;,&#x27;&#123;&#123; theme.utterance.repo &#125;&#125;&#x27;)</span><br><span class="line">            e.crossorigin = &#x27;anonymous&#x27;;</span><br><span class="line">            e.src = &#x27;https://utteranc.es/client.js&#x27;;</span><br><span class="line">            // content 是要插入评论的地方</span><br><span class="line">            document.getElementById(&#x27;utterance-container&#x27;).appendChild(e);</span><br><span class="line">        &#125;)();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3，添加一段代码"><a href="#3，添加一段代码" class="headerlink" title="3，添加一段代码"></a>3，添加一段代码</h3><p><code>D:…\themes\next\layout\_partials\comments.swig</code><br>加入以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if page.comments %&#125; # 这是已经有的代码，将代码插入这里</span><br><span class="line"></span><br><span class="line">	&#123;% elseif theme.utterance.enable %&#125;</span><br><span class="line">	&lt;div class=&quot;comments&quot; id=&quot;comments&quot;&gt;</span><br><span class="line">		&lt;div id=&quot;utterance-container&quot;&gt;</span><br><span class="line">	      &#123;% include &#x27;../_third-party/comments/utterance.swig&#x27; %&#125;</span><br><span class="line">	    &lt;/div&gt;</span><br><span class="line">	  &lt;/div&gt;</span><br><span class="line">&#123;%- endif %&#125; # 这是已经有的代码，将代码插入这里</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+<h3 id="5-新建js文件"><a href="#5-新建js文件" class="headerlink" title="5.  新建js文件"></a>5.  新建js文件</h3><p><code>D:…\themes\next\scripts\filters\comment\utterance.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* global hexo */</span><br><span class="line"></span><br><span class="line">&#x27;use strict&#x27;;</span><br><span class="line"></span><br><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line"></span><br><span class="line">// Add comment</span><br><span class="line">hexo.extend.filter.register(&#x27;theme_inject&#x27;, injects =&gt; &#123;</span><br><span class="line">  let theme = hexo.theme.config;</span><br><span class="line">  if (!theme.utterance.enable) return;</span><br><span class="line"></span><br><span class="line">  injects.comment.raw(&#x27;utterance&#x27;, &#x27;&lt;div class=&quot;comments&quot; id=&quot;utterance-container&quot;&gt;&lt;/div&gt;&#x27;, &#123;&#125;, &#123;cache: true&#125;);</span><br><span class="line"></span><br><span class="line">  injects.bodyEnd.file(&#x27;utterance&#x27;, path.join(hexo.theme_dir, &#x27;layout/_third-party/comments/utterance.swig&#x27;));</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-安装utterancesgithub-app-和-修改主题的config文件"><a href="#6-安装utterancesgithub-app-和-修改主题的config文件" class="headerlink" title="6.安装utterancesgithub app 和 修改主题的config文件"></a>6.安装utterancesgithub app 和 修改主题的config文件</h3><p>这一步跟已集成utterances包的hexo操作一样。<br>下载安装utterances的githubapp，然后修改主题的配置文件。<br>因为我手搓版本用了<code>utterance</code>，所以在配置文件中也要记得去掉s。</p>
+<p>ps.因为试了很多教程，我已经不知道哪段代码具体是哪里挖出来的了……总之感谢各位的教程。</p>
+<p>fin.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://komaruu.github.io/2025/04/04/%E3%80%8A%E8%A7%A3%E4%BD%93%E6%A6%82%E8%A6%81%E3%80%8B%E6%91%98%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -464,20 +559,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
