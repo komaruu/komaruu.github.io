@@ -187,7 +187,6 @@ body {
     padding-right: 0 !important;
   }
 }
-h1,
 h2,
 h3,
 h4,
@@ -195,6 +194,19 @@ h5,
 h6 {
   font-family: 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
+  color: #bb838e;
+  line-height: 1.5;
+  margin: 20px 0 15px;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #b591b5;
+  text-decoration-thickness: 3%; /* 可根据需要调整粗细 */
+  text-underline-offset: 20%;
+}
+h1 {
+  font-family: 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: bold;
+  color: #bb838e;
   line-height: 1.5;
   margin: 20px 0 15px;
 }
@@ -1138,6 +1150,7 @@ pre .javascript .function {
   margin: 0 auto;
   max-width: 96px;
   padding: 2px;
+  border-radius: 50%;
 }
 .site-author-name {
   color: #dbb2ba;
@@ -1165,7 +1178,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8eb6ff;
+  background: #a35dbb;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1812,6 +1825,7 @@ pre .javascript .function {
 .posts-expand .post-meta .post-description {
   font-size: 0.875em;
   margin-top: 2px;
+  color: #e0adb7;
 }
 .posts-expand .post-meta time {
   border-bottom: 1px dashed #999;
@@ -2300,9 +2314,14 @@ hr {
 .posts-expand .post-block:not(:first-child) {
   margin-top: 120px;
 }
-.posts-expand .post-title,
+.posts-expand .post-title {
+  text-align: center;
+  font-weight: bolder;
+}
 .posts-expand .post-meta {
   text-align: center;
+  color: #ccf;
+  font-weight: bold;
 }
 .posts-expand .post-body img {
   margin-left: 0;
@@ -2345,6 +2364,8 @@ hr {
 .back-to-top {
   left: auto;
   right: 30px;
+  background-color: rgba(230,207,230,0.5);
+  border-radius: 50%;
 }
 @media (max-width: 991px) {
   .sidebar-toggle,
