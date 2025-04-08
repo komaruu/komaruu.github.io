@@ -14,14 +14,40 @@
 
         /* body 样式 */
         body {
-            padding: 20px !important;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(to right, rgb(186, 198, 222) 3px, transparent 1px),
+                              linear-gradient(to bottom, rgb(183, 191, 216) 3px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center center;
+            text-align: center;
+        }
+
+        /* 内容容器样式 */
+       .content-container {
+       		margin-top: 40px;
+            padding: 2.6em 3.5em 3.5em 3.5em;
+            border: 5px solid hsla(246, 10.10%, 37.10%, 0.94);
+            border-radius: 15px;
+            margin: 10% auto; /* 上下 10% 的外边距，左右自动居中 */
+            max-width: 35%; 
+        }
+
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 22px;
+            display: block;
+            color: hsla(246, 10.10%, 37.10%, 0.94);
         }
 
         /* 针对 pre 元素的样式 */
         body pre {
-            background-color: #fffdf8 !important;
+            background-color: hsla(220, 28.60%, 75.30%, 0.81) !important;
             border: 1px solid #eaeaea !important;
-            border-left: 8px solid #f1e5e8 !important;
+            border-left: 8px solid hsla(246, 10.10%, 37.10%, 0.94) !important;
             border-radius: 8px !important;
             padding: 0 4px !important;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
@@ -33,7 +59,9 @@
             box-sizing: border-box !important;
             white-space: nowrap !important;
             overflow: hidden !important;
-            height: 2.5em !important;
+            height: 3em !important;
+            font: 18px;
+            text-align: center; /* 添加此行使 pre 元素内的文字水平居中 */
         }
 
         /* pre 元素悬停样式 */
@@ -42,43 +70,52 @@
             transform: translateY(-2px) scale(1.02) !important;
             background-color: #fff6e0 !important;
             border-color: #d8afb7 !important;
-            border-left-color: #f1e5e8 !important;
+            border-left-color: hsla(246, 10.10%, 37.10%, 0.94) !important;
         }
 
         /* pre 元素内 p 标签的样式 */
         body pre p {
             font-family: 'Source Han Serif', 'Courier New', Courier, monospace !important;
             font-size: 0.9em !important;
+            text-align: center; /* 添加此行使 p 标签内的文字水平居中 */
         }
     </style>
 </head>
 
 <body>
-    <pre>
-        <p>
-            这是第一个示例代码文本。
-        </p>
-    </pre>
-    <pre>
-        <p>
-            这是第二个示例代码文本。
-        </p>
-    </pre>
-    <pre>
-        <p>
-            这是第三个示例代码文本。
-        </p>
-    </pre>
-    <pre>
-        <p>
-            这是第四个示例代码文本。
-        </p>
-    </pre>
-    <pre>
-        <p>
-            &lt;a href="#" class="link"&gt;这是第五个示例代码文本。&lt;/a&gt;
-        </p>
-    </pre>
+    <div class="content-container">
+        <h1>FRIENDS</h1>
+        <pre>
+            <p>
+                求你
+            </p>
+        </pre>
+        <pre>
+            <p>
+                跟我交换
+            </p>
+        </pre>
+        <pre>
+            <p>
+                友链
+            </p>
+        </pre>
+        <pre>
+            <p>
+                好不好
+            </p>
+        </pre>
+        <pre>
+            <p>
+                好的
+            </p>
+        </pre>
+        <pre>
+            <p>
+                好！
+            </p>
+        </pre>
+    </div>
     <script>
         window.onload = function () {
             try {
@@ -98,7 +135,11 @@
 
                 // 清空父元素中的 pre 元素
                 while (parent.firstChild) {
-                    parent.removeChild(parent.firstChild);
+                    if (parent.firstChild.tagName === 'PRE') {
+                        parent.removeChild(parent.firstChild);
+                    } else {
+                        break;
+                    }
                 }
 
                 // 将打乱顺序后的 pre 元素重新添加到父元素中
@@ -114,4 +155,4 @@
     </script>
 </body>
 
-</html>    
+</html>
