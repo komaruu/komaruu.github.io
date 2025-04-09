@@ -5,12 +5,12 @@
   --text-color: #363644;
   --blockquote-color: #666;
   --link-color: #dceff5;
-  --link-hover-color: #470024;
+  --link-hover-color: #e5c2d4;
   --brand-color: rgba(174,186,210,0.81);
   --brand-hover-color: rgba(174,186,210,0.81);
   --table-row-odd-bg-color: #f9f9f9;
   --table-row-hover-bg-color: #f5f5f5;
-  --menu-item-bg-color: #ddd;
+  --menu-item-bg-color: rgba(97,82,111,0.43);
   --btn-default-bg: transparent;
   --btn-default-color: var(--link-color);
   --btn-default-border-color: var(--link-color);
@@ -1183,7 +1183,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f63718;
+  background: #afe9ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
