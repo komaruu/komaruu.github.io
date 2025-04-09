@@ -1183,7 +1183,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #afe9ff;
+  background: #465bac;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2407,6 +2407,7 @@ hr {
 }
 .sidebar {
   width: 320px;
+  z-index: 1200;
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
@@ -2415,7 +2416,7 @@ hr {
 .sidebar a,
 .sidebar span.exturl {
   border-bottom-color: #555;
-  color: #999;
+  color: #fff;
 }
 .sidebar a:hover,
 .sidebar span.exturl:hover {
