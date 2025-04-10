@@ -181,7 +181,7 @@ body {
   background-size: 20px 20px;
   background-position: center center;
   color: var(--text-color);
-  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC Black 800', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   line-height: 2;
 }
@@ -196,7 +196,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', 'Noto Serif SC Black 800', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   color: #304c7e;
   line-height: 1.5;
@@ -208,7 +208,7 @@ h6 {
   text-underline-offset: 20%;
 }
 h1 {
-  font-family: 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', 'Noto Serif SC Black 800', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   color: #dceff5;
   line-height: 1.5;
@@ -999,7 +999,7 @@ pre .javascript .function {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: 'Underdog', 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Underdog', 'Noto Serif SC', 'Noto Serif SC Black 800', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   margin: 0;
@@ -1183,7 +1183,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffbb0d;
+  background: #ff9f96;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1524,7 +1524,7 @@ pre .javascript .function {
   }
 }
 .post-body {
-  font-family: 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', 'Noto Serif SC Black 800', "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1819,7 +1819,7 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   color: #999;
-  font-family: 'Noto Serif SC', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', 'Noto Serif SC Black 800', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 0.75em;
   margin: 3px 0 60px 0;
   text-align: center;
