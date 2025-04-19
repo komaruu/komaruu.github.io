@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朋友们</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* body 样式 */
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(to right, rgb(186, 198, 222) 3px, transparent 1px),
+                linear-gradient(to bottom, rgb(183, 191, 216) 3px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center center;
+            text-align: center;
+        }
+
+        /* 内容容器样式 */
+       .content-container {
+            background-color: rgba(247, 245, 242, 0.475);
+            position: relative;
+            margin-top: 40px;
+            padding: 2.6em 3.5em 3.5em 3.5em;
+            border: 5px solid hsla(246, 10.10%, 37.10%, 0.94);
+            border-radius: 15px;
+            margin: 10% auto;
+            /* 上下 10% 的外边距，左右自动居中 */
+            max-width: 35%;
+        }
+
+        /* 返回箭头样式 */
+       .back-arrow {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-weight: 900; /* 进一步加粗箭头 */
+            color: hsla(246, 10.10%, 37.10%, 0.94);
+            cursor: pointer;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+            transition: all 0.3s ease; /* 添加过渡效果 */
+        }
+
+        /* 箭头悬停样式 */
+       .back-arrow:hover {
+            transform: scale(1.1); /* 鼠标悬停时放大 */
+            color: hsla(246, 10.10%, 20%, 0.94); /* 鼠标悬停时改变颜色 */
+        }
+
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 22px;
+            display: block;
+            color: hsla(246, 10.10%, 37.10%, 0.94);
+        }
+
+        /* 针对 button 元素的样式 */
+        body button {
+            background-color: hsla(220, 28.60%, 75.30%, 0.81) !important;
+            border: 1px solid #eaeaea !important;
+            border-left: 8px solid hsla(246, 10.10%, 37.10%, 0.94) !important;
+            border-radius: 8px !important;
+            padding: 0 4px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            transition: all 0.3s ease !important;
+            margin: 10px 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            height: 3em !important;
+            font-size: 18px;
+            text-align: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* button 元素悬停样式 */
+        body button:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15) !important;
+            transform: translateY(-2px) scale(1.02) !important;
+            background-color: #fff6e0 !important;
+            border-color: #d8afb7 !important;
+            border-left-color: hsla(246, 10.10%, 37.10%, 0.94) !important;
+        }
+
+        /* button 元素内 p 标签的样式 */
+        body button p {
+            font-family: 'Source Han Serif', 'Courier New', Courier, monospace !important;
+            font-size: 0.9em !important;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <span class="back-arrow" onclick="window.location.href='/'">&larr;</span>
+        <h1>FRIENDS</h1>
+        <button onclick="window.open('https://example.com/1', '_blank')">
+            <p>
+                求你
+            </p>
+        </button>
+        <button onclick="window.open('https://example.com/2', '_blank')">
+            <p>
+                跟我交换
+            </p>
+        </button>
+        <button onclick="window.open('https://example.com/3', '_blank')">
+            <p>
+                友链
+            </p>
+        </button>
+        <button onclick="window.open('https://example.com/4', '_blank')">
+            <p>
+                好不好
+            </p>
+        </button>
+        <button onclick="window.open('https://example.com/5', '_blank')">
+            <p>
+                好的
+            </p>
+        </button>
+        <button onclick="window.open('https://example.com/6', '_blank')">
+            <p>
+                好！
+            </p>
+        </button>
+    </div>
+    <script>
+        window.onload = function () {
+            try {
+                const buttonElements = Array.from(document.getElementsByTagName('button'));
+                const parent = buttonElements[0].parentNode;
+
+                if (!parent) {
+                    console.error('未找到 button 元素的父元素');
+                    return;
+                }
+
+                // Fisher-Yates 洗牌算法
+                for (let i = buttonElements.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [buttonElements[i], buttonElements[j]] = [buttonElements[j], buttonElements[i]];
+                }
+
+                // 清空父元素中的 button 元素
+                while (parent.firstChild) {
+                    if (parent.firstChild.tagName === 'BUTTON') {
+                        parent.removeChild(parent.firstChild);
+                    } else {
+                        break;
+                    }
+                }
+
+                // 将打乱顺序后的 button 元素重新添加到父元素中
+                buttonElements.forEach(button => {
+                    parent.appendChild(button);
+                });
+
+                console.log('按钮已成功随机排列');
+            } catch (error) {
+                console.error('随机排列按钮时出现错误:', error);
+            }
+        };
+    </script>
+</body>
+
+</html>    
