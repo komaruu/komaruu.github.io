@@ -1183,7 +1183,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #adb57e;
+  background: #304473;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1996,10 +1996,10 @@ pre .javascript .function {
   margin: 5px 10px;
 }
 .category-all-page .category-list-link {
-  font-color: #1383cd;
+  color: #61717b;
 }
 .category-all-page .category-list-count {
-  color: #7a99ae;
+  color: #2d87c3;
 }
 .category-all-page .category-list-count::before {
   content: ' (';
